@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    text-align: left;
+    padding: 10px;
+}
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    text-align: left;
+    padding-left: 12px;
+}
+.container{
+    padding: 24px;
+    padding-left: 100px;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container .group{
+    padding: 8px 8px;
+    margin: 8px;
+}
+input[type="checkbox"] {
+    display: none;
+}
+label{
+    position: relative;
+}
+label::before{
+    content: "";
+    background: url("star.svg");
+    background-position: center;
+    background-size: contain;
+    width:36px;
+    height: 36px;
+    position: absolute;
+    left: -44px;
+    top:-8px;
+
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubbic-bezier(0.54, 0.01, 0, 1.49);
+}
+input[type="checkbox"]:checked + label::before {
+    transform: scale(1) rotateZ(0deg);
+}
+label::after{
+    content: "";
+    background: url("star_outline.svg");
+    background-position: center;
+    background-size: contain;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    left: -44px;
+    top: -8px;
+}
+p {
+    font-family:Courier New, 'Courier', monospace;
+    color:rgb(35, 20, 9);
+    text-align: left;
+    width: 95%;
+    padding: 15px;
+}
+hr {
+    border: 2px dashed rgb(255, 255, 255);
+    border-radius:2px;
+    width: 70%;
+    text-align: center;
+}
+header {
+    background-color: rgb(199, 160, 110);
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    color:rgb(255, 255, 255);
+    border: 10px solid white;
+    border-radius: 5px;
+}
+nav {
+    float: left;
+    width: 20%;
+    background-color: rgb(232, 205, 169);
+    padding: 20px;
+    height: 800px;
+    border: 10px solid white;
+}
+nav ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 10px;
+}
+li{
+    padding: 15px;
+}
+article{
+    float: left;
+    padding: 16px;
+    width: 30%;
+    height: 800px;
+    background-color: antiquewhite;
+}
+aside{
+    float: right;
+    padding: 16px;
+    width: 50%;
+    height: 800px;
+    background-color: antiquewhite;
+}
+footer {
+    padding: 40px;
+    text-align: right;
+    background-color:rgb(199, 160, 110);
+    color: white;
+    border: 10px solid white;
+}
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+b {
+    color: rgba(55, 35, 18, 0.888)
+}
+@media (max-width: 900px){
+    article{
+        width: 80%;
+        height: auto;
+    }
+    nav{
+        height: 600px;
+    }
+    aside{
+        width: 100%;
+        height: auto;
+    }
+
+}
+@media (max-width:800px) {
+    nav, article, aside{
+        width: 100%;
+        height: auto;
+    }
+    h2, article, .container{
+        text-align: left;
+        padding: 22px;
+    }
+    .container{
+        padding-left: 40px;
+    }
+
+}
